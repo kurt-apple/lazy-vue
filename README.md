@@ -1,5 +1,4 @@
-# Lazy Vue (lazy-vue-quasar)
-
+# Lazy Vue
 ## Generic Vue Components
 Have you ever wanted to prototype apps faster? Like, as fast as possible?
 
