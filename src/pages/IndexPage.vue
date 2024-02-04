@@ -2,7 +2,7 @@
   <q-page class="row items-center justify-evenly">
     <div>
       <LazyVueComponent
-        :name="Object.keys({aBigObject})[0]"
+        name="Lazy Vue Demo"
         v-model:data="aBigObject"
         v-model:edit="editForObj"
         :show-edit="true" />
@@ -29,17 +29,17 @@ const aBoolArray = ref([
   true
 ])
 
-const aFuckingObject = {
-  aFuckingBool: false,
-  aFuckingString: 'AAAAHHHHH WOW',
-  aFuckingNumber: 1234
+const aExampleObject = {
+  aExampleBool: false,
+  aExampleString: 'AAAAHHHHH WOW',
+  aExampleNumber: 1234
 }
 
 const aBigObject = shallowRef({
   aSingleBooleanPrimitive,
   aSingleStringPrimitive,
   aBoolArray,
-  aFuckingObject,
+  aExampleObject,
   another_obj: {
     lol: 'no',
     arr_obj: [
