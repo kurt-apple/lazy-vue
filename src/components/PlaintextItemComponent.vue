@@ -25,8 +25,20 @@ onBeforeUpdate(bump)
     <q-item-section>
       <q-item-label lines="2">{{ name }}</q-item-label>
     </q-item-section>
-    <q-input v-if="edit && isText" v-model="val" class="q-ml-sm" @keyup.enter="bump" dense />
+    <q-input v-if="edit && isText" v-model="val" class="q-ml-sm" @keyup.enter="bump" dense autogrow />
     <q-input v-else-if="edit && !isText" v-model.number="val" class="q-ml-sm" @keyup.enter="bump" type="number" @update:model-value="bump" dense />
-    <QBadge v-else :label="data" class="q-ml-sm"/>
+    <QBadge v-else-if="!edit && isText && data!.toString().length < 40 && !data!.toString().includes('\n')" :label="data" class="q-ml-sm"/>
+    <q-card v-else>
+      <q-card-section class="text-block">
+        {{ data }}
+      </q-card-section>
+    </q-card>
   </q-item>
 </template>
+<style scoped>
+.text-block {
+  max-width: 200px;
+  word-break: break-space;
+  white-space: break-spaces;
+}
+</style>
